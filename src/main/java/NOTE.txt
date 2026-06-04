@@ -1,0 +1,27 @@
+Category management (2 Levels)
+Product management
+Order Management
+Payment Management
+
+1Pro mny Pro
+
+
+category(id, name, description, icon, is_deleted)
+products(id, code, name, description, thumbnail, unit_price, qty, is_available, is_deleted)
+orders(id, customer_id, address, discount, status)
+order_lines (id, order_id, product_id, qty, unit_price, discount)
+
+@OneToMany / @ManyToOne
+@OneToOne
+@ManyToMany is cannot used to join colunm
+
+Assocaition Maping(Unidirectional and Bidirectional)
+
+
+Jion Column (PK->FK)
+Join Table
+q
+OneToOne has mappedBy
+ManyToOne cannot mappedBy
+
+Self join
