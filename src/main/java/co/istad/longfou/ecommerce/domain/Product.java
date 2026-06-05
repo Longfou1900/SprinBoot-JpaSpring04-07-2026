@@ -40,6 +40,9 @@ public class Product {
     @ManyToOne
     private Category category;
 
+    @ManyToOne
+    private CategoryTest categoryTest;
+
     @OneToMany(mappedBy = "product")
     private List<OrderLine> orderLines;
 }
