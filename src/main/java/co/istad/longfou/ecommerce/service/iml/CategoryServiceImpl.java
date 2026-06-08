@@ -72,7 +72,7 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     public Page<CategoryResponse> getALlCategories(Integer pageNumber, Integer pageSize) {
         PageRequest pageRequest = PageRequest.of(pageNumber, pageSize);
-        Page<Category> categories = categoryRepository.finAllByDeleteFalse(pageRequest);
+        Page<Category> categories = categoryRepository.finAllByIsDeleteFalse(pageRequest);
         return categories.map(categoryMapper::mapCategoryToCategoryResponse);
     }
 
@@ -95,7 +95,7 @@ public class CategoryServiceImpl implements CategoryService {
                         "Category has not found"
                 ));
         List<Category> subcategories = categoryRepository
-                .findAllByIsDeleted(false);
+                .findAllByParentCategoryIdAndIsDeletedFalse(id);
         return subcategories.stream()
                 .map(categoryMapper::mapCategoryToCategoryResponse)
                 .toList();
