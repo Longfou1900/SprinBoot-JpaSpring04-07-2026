@@ -24,16 +24,15 @@ public class CategoryServiceImpl implements CategoryService {
 
     private final CategoryRepository categoryRepository;
     private final CategoryMapper categoryMapper;
-//    private final CategoryMapper categoryMapper;
 
 //    public CategoryServiceImpl(CategoryRepository categoryRepository, CategoryMapper categoryMapper) {
 //        this.categoryRepository = categoryRepository;
 //        this.categoryMapper = categoryMapper;
 //    }
 
-    //    private CategoryRepository categoryRepository;
-    Category parentCategory = null;
-    CategoryResponse parentCategoryResponse = null;
+//        private CategoryRepository categoryRepository;
+//    Category parentCategory = null;
+//    CategoryResponse parentCategoryResponse = null;
 
     @Override
     public CategoryResponse createNew(CreateCategoryRequest createCategoryRequest) {
@@ -46,7 +45,7 @@ public class CategoryServiceImpl implements CategoryService {
         if (isExisting)
             throw new ResponseStatusException(
                     HttpStatus.CONFLICT,
-                    "category has alrady been used"
+                    "category has already been used"
             );
         if (createCategoryRequest.parentCategoryId() != null) {
             Category parentCategory = categoryRepository.findById(createCategoryRequest.parentCategoryId())
@@ -62,7 +61,7 @@ public class CategoryServiceImpl implements CategoryService {
         category.setIsDeleted(false);
 //        category.setParentCategory(parentCategory);
 
-        //Intsert if primary key is null
+        //Insert if primary key is null
         //update if primary key have value
         category = categoryRepository.save(category);
 
@@ -72,7 +71,7 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     public Page<CategoryResponse> getALlCategories(Integer pageNumber, Integer pageSize) {
         PageRequest pageRequest = PageRequest.of(pageNumber, pageSize);
-        Page<Category> categories = categoryRepository.finAllByIsDeleteFalse(pageRequest);
+        Page<Category> categories = categoryRepository.findAllByIsDeletedFalse(pageRequest);
         return categories.map(categoryMapper::mapCategoryToCategoryResponse);
     }
 
@@ -137,7 +136,7 @@ public class CategoryServiceImpl implements CategoryService {
                 if (isExisting) {
                     throw new ResponseStatusException(
                             HttpStatus.CONFLICT,
-                            "category has alrady been used"
+                            "category has already been used"
                     );
                 }
             }

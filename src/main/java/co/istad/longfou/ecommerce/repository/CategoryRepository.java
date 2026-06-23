@@ -17,7 +17,7 @@ public interface CategoryRepository extends JpaRepository<Category, Integer> {
     //for check category return f/t auto generate name
     boolean existsByName(String name);
 
-    Page<Category> finAllByIsDeleteFalse(Pageable pageable);
+    Page<Category> findAllByIsDeletedFalse(Pageable pageable);
 
     Optional<Category> findByIdAndIsDeletedFalse(Integer id);
 

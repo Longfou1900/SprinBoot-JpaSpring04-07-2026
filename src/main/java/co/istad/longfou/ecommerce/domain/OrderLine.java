@@ -17,8 +17,8 @@ public class OrderLine {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @ManyToOne
-    private Order order;
+//    @ManyToOne
+//    private Order order;
 
     @ManyToOne
     private Product product;

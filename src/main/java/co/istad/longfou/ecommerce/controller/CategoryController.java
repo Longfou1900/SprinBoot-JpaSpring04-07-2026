@@ -35,7 +35,7 @@ public class CategoryController {
 
     @GetMapping("/{id}")
     public CategoryResponse getCategoryById(@PathVariable Integer id){
-        return  categoryService.getCategoryById(id);
+        return categoryService.getCategoryById(id);
     }
 
     @GetMapping("/{id}/subcategories")
@@ -44,7 +44,7 @@ public class CategoryController {
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    @GetMapping("/{id}")
+    @DeleteMapping("/{id}")
     public void deleteCategoryById(@PathVariable Integer id){
         categoryService.deleteCategoryById(id);
     }
@@ -59,4 +59,9 @@ public class CategoryController {
                                                @Valid @RequestBody UpdateCategoryRequest updateCategoryRequest) {
         return categoryService.updateCategoryById(id, updateCategoryRequest);
     }
+
+
+
+
+
 }
