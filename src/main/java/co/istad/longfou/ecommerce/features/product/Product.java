@@ -1,5 +1,8 @@
-package co.istad.longfou.ecommerce.domain;
+package co.istad.longfou.ecommerce.features.product;
 
+import co.istad.longfou.ecommerce.features.order.OrderLine;
+import co.istad.longfou.ecommerce.features.category.Category;
+import co.istad.longfou.ecommerce.features.category.CategoryTest;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

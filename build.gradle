@@ -19,6 +19,8 @@ repositories {
 }
 
 dependencies {
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-scalar:3.0.3'
+
     //------ Map Struct and lombok --------
     // Source: https://mvnrepository.com/artifact/org.mapstruct/mapstruct
     // Source: https://mvnrepository.com/artifact/org.mapstruct/mapstruct-processor

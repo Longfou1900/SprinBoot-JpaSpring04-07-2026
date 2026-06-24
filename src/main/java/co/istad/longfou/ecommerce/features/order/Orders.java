@@ -1,9 +1,7 @@
-package co.istad.longfou.ecommerce.domain;
+package co.istad.longfou.ecommerce.features.order;
 
+import co.istad.longfou.ecommerce.domain.User;
 import jakarta.persistence.*;
-import jakarta.persistence.criteria.CriteriaBuilder;
-import jakarta.persistence.criteria.CriteriaQuery;
-import jakarta.persistence.criteria.Root;
 
 @Entity
 @Table(name = "orders")

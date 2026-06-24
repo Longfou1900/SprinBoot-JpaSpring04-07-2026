@@ -1,9 +1,8 @@
-package co.istad.longfou.ecommerce.controller;
+package co.istad.longfou.ecommerce.features.category;
 
-import co.istad.longfou.ecommerce.dto.CategoryResponse;
-import co.istad.longfou.ecommerce.dto.CreateCategoryRequest;
-import co.istad.longfou.ecommerce.dto.UpdateCategoryRequest;
-import co.istad.longfou.ecommerce.service.CategoryService;
+import co.istad.longfou.ecommerce.features.category.dto.CategoryResponse;
+import co.istad.longfou.ecommerce.features.category.dto.CreateCategoryRequest;
+import co.istad.longfou.ecommerce.features.category.dto.UpdateCategoryRequest;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;

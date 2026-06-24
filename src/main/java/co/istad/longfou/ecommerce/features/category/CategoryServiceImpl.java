@@ -1,12 +1,8 @@
-package co.istad.longfou.ecommerce.service.iml;
+package co.istad.longfou.ecommerce.features.category;
 
-import co.istad.longfou.ecommerce.domain.Category;
-import co.istad.longfou.ecommerce.dto.CategoryResponse;
-import co.istad.longfou.ecommerce.dto.CreateCategoryRequest;
-import co.istad.longfou.ecommerce.dto.UpdateCategoryRequest;
-import co.istad.longfou.ecommerce.mapper.CategoryMapper;
-import co.istad.longfou.ecommerce.repository.CategoryRepository;
-import co.istad.longfou.ecommerce.service.CategoryService;
+import co.istad.longfou.ecommerce.features.category.dto.CategoryResponse;
+import co.istad.longfou.ecommerce.features.category.dto.CreateCategoryRequest;
+import co.istad.longfou.ecommerce.features.category.dto.UpdateCategoryRequest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;

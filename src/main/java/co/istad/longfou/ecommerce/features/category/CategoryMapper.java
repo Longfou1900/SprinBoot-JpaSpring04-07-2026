@@ -1,8 +1,7 @@
-package co.istad.longfou.ecommerce.mapper;
+package co.istad.longfou.ecommerce.features.category;
 
-import co.istad.longfou.ecommerce.domain.Category;
-import co.istad.longfou.ecommerce.dto.CategoryResponse;
-import co.istad.longfou.ecommerce.dto.CreateCategoryRequest;
+import co.istad.longfou.ecommerce.features.category.dto.CategoryResponse;
+import co.istad.longfou.ecommerce.features.category.dto.CreateCategoryRequest;
 import org.mapstruct.Mapper;
 //import org.springframework.stereotype.Component;
 

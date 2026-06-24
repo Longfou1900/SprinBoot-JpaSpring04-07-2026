@@ -1,4 +1,4 @@
-package co.istad.longfou.ecommerce.dto;
+package co.istad.longfou.ecommerce.features.category.dto;
 
 import jakarta.validation.constraints.Size;
 

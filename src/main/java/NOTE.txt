@@ -25,3 +25,16 @@ OneToOne has mappedBy
 ManyToOne cannot mappedBy
 
 Self join
+
+
+---
+Upload file
+------
+Classpath Resource
+File System
+Cloud
+Storage AChitecture(S3, MinIO)
+-----
+file Upload
+-------------
+File Management
