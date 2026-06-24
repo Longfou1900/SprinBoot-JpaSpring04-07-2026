@@ -38,3 +38,13 @@ Storage AChitecture(S3, MinIO)
 file Upload
 -------------
 File Management
+
+
+Number of files = 3
+air.jpg
+photo_2026-04-02_21-59-13.jpg
+tg_image_4117399487.png
+Number of files = 3
+air.jpg
+photo_2026-04-02_21-59-13.jpg
+tg_image_4117399487.png

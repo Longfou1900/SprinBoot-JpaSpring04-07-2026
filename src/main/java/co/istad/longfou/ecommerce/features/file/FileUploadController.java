@@ -32,6 +32,12 @@ public class FileUploadController {
             @RequestPart("files") List<MultipartFile> files)
 //    @RequestParam("files") List<MultipartFile> files)
     {
+        System.out.println("Number of files = " + files.size());
+
+        files.forEach(file ->
+                System.out.println(file.getOriginalFilename())
+        );
+
         return fileUploadService.uploadMultiple(files);
     }
 
