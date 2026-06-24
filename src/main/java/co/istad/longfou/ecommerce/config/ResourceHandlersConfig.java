@@ -7,7 +7,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 public class ResourceHandlersConfig implements WebMvcConfigurer {
-    @Value("${file.storage-lacation}")
+    @Value("${file.storage-location}")
     private String storageLocation;
 
     @Value("${file.client-path}")

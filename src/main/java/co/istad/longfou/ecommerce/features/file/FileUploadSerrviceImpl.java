@@ -12,12 +12,13 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.List;
 import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
 public class FileUploadSerrviceImpl implements FileUploadService {
-    @Value("${file.storage-lacation}")
+    @Value("${file.storage-location}")
     private String sorageLocation;
     @Value("${file.basae-uri}")
     private String baseUri;
@@ -49,5 +50,23 @@ public class FileUploadSerrviceImpl implements FileUploadService {
                 .mediaType(file.getContentType())
                 .uri(baseUri+name)
                 .build();
+    }
+
+    @Override
+    public List<FileUploadResponse> uploadMultiple(List<MultipartFile> files) {
+        return files.stream()
+                .map(this::upload)
+                .toList();
+    }
+
+    @Override
+    public void deleteByName(String name) {
+        Path path = Paths.get(sorageLocation, name);
+
+        try{
+            Files.deleteIfExists(path);
+        }catch (IOException e){
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND,"Failed to delete file: "+name, e);
+        }
     }
 }

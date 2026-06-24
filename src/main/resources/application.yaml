@@ -1,6 +1,6 @@
 file:
   client-path: /me
-  storage-lacation: D:/ISTAD/ITE3rd/ite-img/
+  storage-location: D:/ISTAD/ITE3rd/ite-img/
   basae-uri: http://localhost:${server.port}${file.client-path}/
 spring:
   jpa:
