@@ -45,7 +45,8 @@ public class OrderServiceImpl implements OrderService {
                         newOrderLine.setProduct(productOptional.get());
                         newOrderLine.setQty(orderLine.qty());
                         newOrderLine.setUnit_price(orderLine.unitPrice());
-                        newOrderLine.setOrder(newOrderLine.getOrder());
+                        newOrderLine.setOrder(order);
+//                        newOrderLine.setOrder(newOrderLine.getOrder());
                         orderLines.add(newOrderLine);
                         return true;
                     }
