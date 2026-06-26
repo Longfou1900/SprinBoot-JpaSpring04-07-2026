@@ -29,6 +29,10 @@ public class OrderServiceImpl implements OrderService{
 
     @Override
     public OrderReponse createNew(CreateOrderRequest createOrderRequest) {
+        final Order order = new Order();
+        order.setAddress(createOrderRequest.address());
+        order.setDiscount(createOrderRequest.discount());
+        order.setRemark(createOrderRequest.remark());
 
         List<OrderLine> orderLines = new ArrayList<>();
 
@@ -58,9 +62,7 @@ public class OrderServiceImpl implements OrderService{
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
                     "Invalid order code line");
         }
-        Order order = new Order();
-        order.setAddress(createOrderRequest.address());
-        order.setDiscount(createOrderRequest.discount());
+
         order.setOrderLines(orderLines);
 
         //Security related
@@ -70,8 +72,8 @@ public class OrderServiceImpl implements OrderService{
         order.setOrderedAt(LocalDateTime.now());
         order.setStatus(false);
 
-        order = orderRepository.save(order);
+       Order savedOrder = orderRepository.save(order);
 
-        return orderMapper.mapOrderToOrderResponse(order);
+        return orderMapper.mapOrderToOrderResponse(savedOrder);
     }
 }

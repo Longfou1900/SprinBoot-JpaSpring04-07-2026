@@ -37,7 +37,7 @@ public class Order {
     @Column(name = "amount")
     private Double amount;
 
-    @OneToMany(mappedBy = "order")
+    @OneToMany(mappedBy = "order", cascade = CascadeType.PERSIST)
     private List<OrderLine> orderLines;
 
     //more Orders stored a User
