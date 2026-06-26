@@ -3,6 +3,10 @@ file:
   storage-location: D:/ISTAD/ITE3rd/ite-img/
   basae-uri: http://localhost:${server.port}${file.client-path}/
 spring:
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 20MB
   jpa:
     hibernate:
     # ddl-auto: create-drop
@@ -16,5 +20,6 @@ spring:
 
   application:
     name: ite-3rd-ecommerce
+
 server:
   port: 9990

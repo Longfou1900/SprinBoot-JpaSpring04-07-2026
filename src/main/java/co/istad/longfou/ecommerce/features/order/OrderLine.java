@@ -2,6 +2,7 @@ package co.istad.longfou.ecommerce.features.order;
 
 import co.istad.longfou.ecommerce.features.product.Product;
 import jakarta.persistence.*;
+import jakarta.persistence.criteria.Order;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -18,8 +19,8 @@ public class OrderLine {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-//    @ManyToOne
-//    private Order order;
+    @ManyToOne
+    private Order order;
 
     @ManyToOne
     private Product product;
