@@ -2,7 +2,6 @@ package co.istad.longfou.ecommerce.features.order;
 
 import co.istad.longfou.ecommerce.features.product.Product;
 import jakarta.persistence.*;
-import jakarta.persistence.criteria.Order;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

@@ -17,7 +17,8 @@ public record CreateOrderRequest(
         String remark,
 
         @NotEmpty(message = "Order line is required")
-        List<OrderLine> orderLines
+        List<OrderLineDto> orderLines
+//        List<OrderLine> orderLines
 
 ) {
 }
