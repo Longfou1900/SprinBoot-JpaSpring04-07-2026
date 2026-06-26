@@ -18,7 +18,7 @@ import org.springframework.web.server.ResponseStatusException;
 @RequiredArgsConstructor
 @Slf4j
 public class ProductServiceImpl implements ProductService{
-    private final ProductRepository productRepository;
+    private final ProductRespository productRepository;
     private final CategoryRepository categoryRepository;
     private final Productmapper productmapper;
 
